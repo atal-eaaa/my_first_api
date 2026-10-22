@@ -5,6 +5,7 @@
 Yatzi-api'et kræver installation af pakkerne fastapi og uvicorn, som skal installeres med pip:
 
 > pip install fastapi[standard]
+
 > pip install uvicorn
 
 Hvis det ønskes, kan api'et køres i et virtuelt environment, som oprettes således:
