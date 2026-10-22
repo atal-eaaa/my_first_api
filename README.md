@@ -29,3 +29,5 @@ API'et kører på denne måde i developer-mode, hvilket betyder at ændringer i 
 Leg rundt med det og prøv de forskellige endpoints!
 
 API'et stoppes ved at skrivt CTRL + C i terminalen. 
+
+God fornøjelse!!!!
