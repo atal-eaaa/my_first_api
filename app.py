@@ -66,5 +66,6 @@ def calculate_score(dice:list[int]):
 @app.post("/new_game")
 def initialize_game(name1:str, name2:str):
     create_json_w_scores(name1, name2)
-    return({'message': f'Nu er vi i gang! Dagens spillere er {name1} og {name2}'})
+    return({'message': 
+            f'Nu er vi i gang! Dagens spillere er {name1} og {name2}'})
 
