@@ -1,6 +1,6 @@
 import datetime
 from fastapi import FastAPI, HTTPException
-from yatzy import roll_a_die, roll_the_dice, score_yatzy
+from yatzy import roll_a_die, roll_the_dice, score_yatzy, create_json_w_scores
 
 
 
@@ -14,11 +14,18 @@ from yatzy import roll_a_die, roll_the_dice, score_yatzy
 
 
 
-app = FastAPI()
+app = FastAPI(
+    title="Yatzy API",
+    summary="Et super smart API til at lære om API'er mens man spiller yatzy."
+    )
 
 @app.get("/is_alive")
 def is_alive():
     return {"message": "Hello, this api is up and running!"}
+
+# @app.get("/average")
+# def average(number1: int, number2: int):
+#     return {"average": 0.5*(number1+number2))}
 
 # @app.get("/get_squared/{number}")
 # def squared(number:int):
@@ -28,7 +35,7 @@ def is_alive():
 # def now():
 #     return {datetime.datetime.now()}
 
-@app.get("/roll_die/")
+@app.get("/roll_die")
 def roll_die():
     return({"Terningekast": roll_a_die()})
 
@@ -54,4 +61,10 @@ def calculate_score(dice:list[int]):
     scores = score_yatzy(dice)
     return({'Score':scores})
 
+
+
+@app.post("/new_game")
+def initialize_game(name1:str, name2:str):
+    create_json_w_scores(name1, name2)
+    return({'message': f'Nu er vi i gang! Dagens spillere er {name1} og {name2}'})
 
