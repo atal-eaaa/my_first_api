@@ -1,4 +1,4 @@
-# Yatzi-api
+# Yatzy-api
 
 ## Installationsguide
 Hvis du starter i teknologi_data_integration-mappen i terminalen:
@@ -19,7 +19,7 @@ Og aktiveres således (windows/mac):
 eller
 > source .venv/bin/activate
 
-Yatzi-api'et kræver installation af pakkerne fastapi og uvicorn, som skal installeres med pip:
+Yatzy-api'et kræver installation af pakkerne fastapi og uvicorn, som skal installeres med pip:
 
 > pip install fastapi[standard]
 
@@ -28,11 +28,11 @@ Yatzi-api'et kræver installation af pakkerne fastapi og uvicorn, som skal insta
 # Kørselsguide
 
 API'et køres med kommandoen:
-> fastapi dev app.py
+> uvicorn main:app --reload
 
 og dernæst åbnes swagger-docs på linket i terminalen: http://127.0.0.1:8000/docs
 
-API'et kører på denne måde i developer-mode, hvilket betyder at ændringer i koden med det samme opdateres  i UI'et (front-enden, swagger-docs).
+API'et kører på i reload-mode, hvilket betyder at ændringer i koden opdateres i UI'et (front-enden, swagger-docs) uden at skulle stoppe og tænde API'et igen.
 
 Leg rundt med det og prøv de forskellige endpoints!
 

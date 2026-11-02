@@ -7,7 +7,7 @@ from yatzy import roll_a_die, roll_the_dice, score_yatzy, create_json_w_scores
 ####################################################
 #                                                  #
 #  run api with following command in terminal:     #
-#  > fastapi dev app.py                            #
+#  > uvicorn main:app --reload                     #
 #  followed by clicking link to swagger-docs       #
 #                                                  #
 ####################################################
@@ -19,7 +19,7 @@ app = FastAPI(
     summary="Et super smart API til at lære om API'er mens man spiller yatzy."
     )
 
-@app.get("/is_alive")
+@app.get("/")
 def is_alive():
     return {"message": "Hello, this api is up and running!"}
 
@@ -39,7 +39,7 @@ def is_alive():
 def roll_die():
     return({"Terningekast": roll_a_die()})
 
-@app.get("/roll_n_dice/{number}")
+@app.get("/roll_n_dice")
 def roll_n_dice(number:int):
     return({"Terningekast": roll_the_dice(number)})
 

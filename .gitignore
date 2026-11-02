@@ -219,3 +219,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+my_functions.py
+my_script.py
