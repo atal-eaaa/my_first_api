@@ -1,5 +1,4 @@
 import random 
-import json
 
 def roll_a_die():
     """
@@ -97,13 +96,6 @@ def score_yatzy(dice):
 
     return scores
 
-def create_json_w_scores(name1, name2):
-    scores_dict = {'player1': {'name': name1, 'score': 0},
-                   'player2': {'name': name2, 'score': 0}}
-    with open("yatzy.json", "w") as f:
-        json.dump(scores_dict, f)
-
-
 
 if __name__ == '__main__':
     # try it out
@@ -111,7 +103,5 @@ if __name__ == '__main__':
     
     print(counter(my_dice))
     print(score_yatzy(my_dice))
-
-    create_json_w_scores('ATAL', 'AKCH')
 
 
