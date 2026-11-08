@@ -1,10 +1,9 @@
 # Yatzy-api
 
 ## Installationsguide
-Hvis du starter i teknologi_data_integration-mappen i terminalen:
-> cd ..
+Start IKKE i teknologi_data_integration-mappe eller undermappe! 
+Kør følgende i en passende mappe:
 > git clone https://github.com/atal-eaaa/my_first_api
-> cd my_first_api
 
 
 
