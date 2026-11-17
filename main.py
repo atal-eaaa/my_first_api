@@ -1,8 +1,5 @@
-import datetime
-from fastapi import FastAPI, HTTPException
+import fastapi
 from yatzy import roll_a_die, roll_the_dice, score_yatzy
-
-
 
 ####################################################
 #                                                  #
@@ -13,10 +10,9 @@ from yatzy import roll_a_die, roll_the_dice, score_yatzy
 ####################################################
 
 
-
-app = FastAPI(
+app = fastapi.FastAPI(
     title="Yatzy API",
-    summary="Et super smart API til at lære om API'er mens man spiller yatzy."
+    summary="Et super smart API til at lære om API'er mens man spiller yatzy.",
     )
 
 @app.get("/")
@@ -35,12 +31,12 @@ def roll_n_dice(number:int):
 def calculate_score(dice:list[int]):
     # check input
     if len(dice) != 5:
-        raise HTTPException(
+        raise fastapi.HTTPException(
             status_code=403, 
             detail="Yatzy kræver præcis 5 terninger. Prøv igen!"
             )
     elif min(dice) < 1 or max(dice) > 6:
-        raise HTTPException(
+        raise fastapi.HTTPException(
             status_code=403, 
             detail="Terningeslag skal være mellem 1-6. Prøv igen!"
             )
